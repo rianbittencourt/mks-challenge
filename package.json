@@ -9,7 +9,7 @@
     ]
   },
   "scripts": {
-    "dev": "next dev ",
+    "dev": "concurrently \"next dev\" \"start-storybook -p 6006 -s public\"",
     "build": "next build",
     "start": "next start",
     "test": "jest",

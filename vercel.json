@@ -1,7 +1,5 @@
 {
   "$schema": "https://vercel.com/schema",
-  "buildCommand": "npm run build-storybook",
-  "devCommand": "npm run storybook",
   "version": 2,
   "builds": [
     { "src": "next.config.js", "use": "@vercel/next" },
@@ -22,5 +20,11 @@
   ],
   "env": {
     "NEXT_PUBLIC_STORYBOOK_PATH": "/storybook"
+  },
+  "functions": {
+    "api/storybook": {
+      "runtime": "nodejs14.x",
+      "memory": 1024
+    }
   }
 }
