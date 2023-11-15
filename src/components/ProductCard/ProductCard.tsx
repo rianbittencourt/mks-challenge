@@ -23,7 +23,7 @@ interface Product {
   price: string;
 }
 
-interface ProductCardProps {
+export interface ProductCardProps {
   product: Product | null;
 }
 
