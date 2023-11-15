@@ -15,7 +15,9 @@
     "test": "jest",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "sb build "
+    "build-storybook": "sb build ",
+    "serve-storybook": "serve -s storybook-static"
+
   },
   "dependencies": {
     "next": "14.0.2",
