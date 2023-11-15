@@ -5,6 +5,7 @@
     { "src": "next.config.js", "use": "@vercel/next" },
     { "src": "storybook-static/**/*", "use": "@vercel/static" }
   ],
+
   "routes": [
     { "handle": "filesystem" },
     {
@@ -21,5 +22,5 @@
   "env": {
     "NEXT_PUBLIC_STORYBOOK_PATH": "/storybook"
   },
-  "devCommand": "concurrently \"npm run dev\" \"npm run storybook\""
+  "devCommand": "npm run storybook && next dev"
 }
