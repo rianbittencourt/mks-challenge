@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 export const CardContainer = styled.div`
   position: relative;
+  background:white;
   width: 250px;
   border: 1px solid #ccc;
   padding: 16px;
   margin: 16px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 `;
 
