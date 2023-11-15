@@ -9,8 +9,8 @@
     ]
   },
   "scripts": {
-    "dev": "next dev && storybook dev -p 6006  ",
-    "build": "next build && storybook build  public ",
+    "dev": "next dev  ",
+    "build": "next build  ",
     "start": "next start",
     "test": "jest",
     "lint": "next lint",
