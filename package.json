@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "next dev  ",
-    "build": "next build && sb build -s public",
+    "build": "next build && sb build ",
     "start": "next start",
     "test": "jest",
     "lint": "next lint",
