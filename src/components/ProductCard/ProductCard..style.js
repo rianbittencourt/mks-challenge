@@ -35,13 +35,15 @@ export const ProductName = styled.h2`
   font-family: Montserrat;
   font-weight: lighter;
   font-size: 1.2rem;
+  padding-right: 0.5rem;
+
   color: #2c2c2c;
 `;
 
 export const CurrentPriceContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 export const ProductPrice = styled.p`
@@ -66,7 +68,7 @@ export const ProductDescription = styled.p`
 export const BuyButton = styled.button`
   background-color: #0f52ba;
   color: #fff;
-  padding: 8px;
+  padding: 1rem;
   border: none;
   font-weight: bold;
   font-family: Montserrat;
@@ -75,4 +77,8 @@ export const BuyButton = styled.button`
   position: absolute;
   left: 0;
   bottom: 0;
+  &:hover {
+    transition: 0.5s;
+    background-color: #073d6e; // Cor diferente quando o mouse está sobre o botão
+  }
 `;
