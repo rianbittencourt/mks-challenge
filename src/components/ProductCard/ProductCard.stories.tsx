@@ -1,5 +1,5 @@
 import React from "react";
-import { storiesOf } from "@storybook/react";
+import { Meta, Story } from "@storybook/react";
 import ProductCard from "./ProductCard";
 
 export default {
