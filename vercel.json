@@ -5,7 +5,7 @@
   "devCommand": "npm run storybook",
   "builds": [
     { "src": "next.config.js", "use": "@vercel/next" },
-    { "src": "storybook-static/**/*", "use": "@vercel/static" }
+    { "src": "npm run storybook/**/*", "use": "@vercel/static" }
   ],
 
   "routes": [
