@@ -22,5 +22,6 @@
   "env": {
     "NEXT_PUBLIC_STORYBOOK_PATH": "/storybook"
   },
-  "devCommand": "npm run storybook && next dev"
+  "buildCommand": "npm run build-storybook",
+  "devCommand": "npm run storybook"
 }
