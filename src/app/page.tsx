@@ -1,95 +1,83 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+import Image from "next/image";
+import styles from "./page.module.css";
+import { useState } from "react";
+import { useQuery } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+import ProductCard from "../components/ProductCard";
+import Header from "../components/Header";
+import styled from "styled-components";
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+const Container = styled.div`
+  max-width: 80rem;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+export interface Products {
+  id: number;
+  name: string;
+  brand: string;
+  description: string;
+  photo: string;
+  price: string;
 }
+
+async function getProducts(currentPage: number): Promise<Products[]> {
+  const request = await fetch(
+    `https://mks-frontend-challenge-04811e8151e6.herokuapp.com/api/v1/products?page=${currentPage}&rows=8&sortBy=id&orderBy=DESC`
+  );
+
+  const response = await request.json();
+
+  if (!request.ok || response.error) {
+    throw new Error(response.error || "Error fetching data");
+  }
+
+  return response.products as Products[];
+}
+
+const Home = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const { data, isError, isLoading } = useQuery(["products", currentPage], () =>
+    getProducts(currentPage)
+  );
+
+  if (isLoading) {
+    // Retornar um array vazio enquanto os dados estão sendo carregados
+    return (
+      <>
+      
+        <Container>
+          {Array.from({ length: 4 }).map((_, index) => (
+            <ProductCard key={index} product={null} />
+          ))}
+        </Container>
+      </>
+    );
+  }
+
+  if (isError || !data || data.length === 0) {
+    return (
+      <section>
+        <p>Ocorreu um Erro</p>
+      </section>
+    );
+  }
+
+  return (
+    <>
+    
+      <Container>
+        {data.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </Container>
+    </>
+  );
+};
+
+export default Home;
