@@ -15,7 +15,7 @@
     "test": "jest",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
+    "build-storybook": "build-storybook",
     "serve-storybook": "serve storybook-static"
   },
   "dependencies": {
@@ -29,6 +29,7 @@
   "devDependencies": {
     "@babel/preset-react": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
+    "@storybook/addon-actions": "^7.5.3",
     "@storybook/addon-essentials": "^7.5.3",
     "@storybook/addon-interactions": "^7.5.3",
     "@storybook/addon-links": "^7.5.3",
