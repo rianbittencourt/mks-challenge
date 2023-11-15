@@ -1,25 +1,6 @@
 {
-  "$schema": "https://vercel.com/schema",
-  "version": 2,
-  "builds": [
-    { "src": "next.config.js", "use": "@vercel/next" },
-    { "src": "npm run start-storybook -p 6006", "use": "@vercel/static" }
-  ],
-
-  "routes": [
-    { "handle": "filesystem" },
-    {
-      "src": "/storybook/(.*)",
-      "dest": "/storybook/$1",
-      "check": true
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1",
-      "check": true
-    }
-  ],
-  "env": {
-    "NEXT_PUBLIC_STORYBOOK_PATH": "/storybook"
-  }
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "npm install",
+  "framework": null,
+  "outputDirectory": "./storybook-static"
 }
