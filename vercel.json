@@ -1,17 +1,23 @@
 {
- 
   "routes": [
     {
-      "src": "./storybook-static/(.*)",
-      "dest": "./storybook-static/$1"
+      "src": "^/storybook-static/(.*)$",
+      "dest": "/storybook-static/$1"
     },
-
     {
-      "src": "/(.*)",
-      "dest": "/$1",
-      "headers": {
-        "Cache-Control": "public, max-age=0, must-revalidate"
-      }
+      "src": "^/storybook-static$",
+      "dest": "/storybook-static/index.html"
+    },
+    {
+      "src": "/storybook-static",
+      "dest": "/storybook-static"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": ".*",
+      "dest": "/index.html"
     }
   ]
 }
