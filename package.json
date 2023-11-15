@@ -9,14 +9,13 @@
     ]
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev && sb build ",
     "build": "next build",
     "start": "next start",
     "test": "jest",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "sb build",
-    "serve-storybook": "serve storybook-static"
+    "build-storybook": "sb build "
   },
   "dependencies": {
     "next": "14.0.2",
