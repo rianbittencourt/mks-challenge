@@ -20,6 +20,5 @@
   ],
   "env": {
     "NEXT_PUBLIC_STORYBOOK_PATH": "/storybook"
-  },
-  "devCommand": "concurrently \"npm run dev\" \"npm run storybook\""
+  }
 }

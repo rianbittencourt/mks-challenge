@@ -9,7 +9,7 @@
     ]
   },
   "scripts": {
-    "dev": "concurrently \"next dev\" \"npm run storybook\"",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "test": "jest",
