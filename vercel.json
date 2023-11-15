@@ -1,10 +1,7 @@
 {
   "outputDirectory": "./storybook-static",
   "routes": [
-    {
-      "src": "/storybook-static/(.*)",
-      "dest": "/storybook-static/$1"
-    },
+    {},
 
     {
       "src": "/(.*)",
