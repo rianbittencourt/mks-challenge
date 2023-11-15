@@ -2,6 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import Skeleton from "react-loading-skeleton";
 
+
+interface Product {
+  id: number;
+  name: string;
+  brand: string;
+  description: string;
+  photo: string;
+  price: string;
+}
+
+interface ProductCardProps {
+  product: Product | null;
+}
+
 const CardContainer = styled.div`
   position: relative;
   width: 250px;
@@ -79,43 +93,55 @@ const BuyButton = styled.button`
   bottom: 0;
 `;
 
-const formatCurrency = (value) => {
+const formatCurrency = (value: number) => {
   return value.toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL",
-    minimumFractionDigits: 0, 
-    maximumFractionDigits: 2, 
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
   });
 };
 
-const ProductCard = ({ product }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const isLoading = !product;
 
   return (
     <CardContainer>
       {isLoading ? (
-        <SkeletonContainer />
+        <SkeletonContainer data-testid="skeleton-image" />
       ) : (
-        <ProductImage src={product.photo} alt={product.name} />
+        <ProductImage src={product!.photo} alt={product!.name} />
       )}
       <NameAndPriceContainer>
         {isLoading ? (
-          <Skeleton width={150} height={20} />
+          <Skeleton
+            count={2}
+            height={20}
+            width={100}
+            data-testid="skeleton-name"
+          />
         ) : (
-          <ProductName>{product.name}</ProductName>
+          <ProductName>{product!.name}</ProductName>
         )}
         <CurrentPriceContainer>
           {isLoading ? (
-            <Skeleton width={80} height={20} />
+            <Skeleton
+              count={1}
+              height={20}
+              width={100}
+              data-testid="skeleton-price"
+            />
           ) : (
-            <ProductPrice>{formatCurrency(Number(product.price))}</ProductPrice>
+            <ProductPrice>
+              {formatCurrency(Number(product!.price))}
+            </ProductPrice>
           )}
         </CurrentPriceContainer>
       </NameAndPriceContainer>
       {isLoading ? (
-        <Skeleton count={3} />
+        <Skeleton count={3} data-testid="skeleton-description" />
       ) : (
-        <ProductDescription>{product.description}</ProductDescription>
+        <ProductDescription>{product!.description}</ProductDescription>
       )}
       {!isLoading && <BuyButton>COMPRAR</BuyButton>}
     </CardContainer>

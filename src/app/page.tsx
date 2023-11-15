@@ -7,6 +7,7 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
 import styled from "styled-components";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const Container = styled.div`
   max-width: 80rem;
@@ -50,7 +51,6 @@ const Home = () => {
     // Retornar um array vazio enquanto os dados estão sendo carregados
     return (
       <>
-      
         <Container>
           {Array.from({ length: 4 }).map((_, index) => (
             <ProductCard key={index} product={null} />
@@ -70,7 +70,6 @@ const Home = () => {
 
   return (
     <>
-    
       <Container>
         {data.map((product) => (
           <ProductCard key={product.id} product={product} />
