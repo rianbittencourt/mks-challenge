@@ -2,18 +2,7 @@
   "routes": [
     {
       "src": "^/storybook-static/(.*)$",
-      "dest": "./storybook-static/$1"
-    },
-    {
-      "src": "^/storybook-static$",
-      "dest": "./storybook-static/index.html"
-    },
-    {
-      "src": "/storybook-static",
-      "dest": "./storybook-static"
-    },
-    {
-      "handle": "filesystem"
+      "dest": "/storybook-static/$1"
     },
     {
       "src": ".*",
