@@ -59,8 +59,8 @@ const ProductPrice = styled.p`
 `;
 
 const ProductDescription = styled.p`
-  padding-top: 20px;
-  padding-bottom: 50px;
+  padding-top: 10px;
+  padding-bottom: 40px;
   font-family: Montserrat;
   color: #555;
 `;
@@ -83,6 +83,8 @@ const formatCurrency = (value) => {
   return value.toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL",
+    minimumFractionDigits: 0, 
+    maximumFractionDigits: 2, 
   });
 };
 
