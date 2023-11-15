@@ -7,7 +7,6 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
 import styled from "styled-components";
-import "react-loading-skeleton/dist/skeleton.css";
 
 const Container = styled.div`
   max-width: 80rem;
