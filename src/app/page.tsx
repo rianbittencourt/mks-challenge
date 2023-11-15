@@ -51,7 +51,7 @@ const Home = () => {
     return (
       <>
         <Container>
-          {Array.from({ length: 4 }).map((_, index) => (
+          {Array.from({ length: 8 }).map((_, index) => (
             <ProductCard key={index} product={null} />
           ))}
         </Container>
