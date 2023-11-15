@@ -10,11 +10,11 @@
   },
   "scripts": {
     "dev": "next dev  ",
-    "build": "next build && sb build ",
+    "build": "next build && sb build && sb start ",
     "start": "next start",
     "test": "jest",
     "lint": "next lint",
-    "storybook": "start-storybook -p 6006 -s public",
+    "storybook": "sb start -p 6006 ",
     "build-storybook": "sb build -s public ",
     "serve-storybook": "serve storybook-static"
   },
