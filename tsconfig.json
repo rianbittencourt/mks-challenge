@@ -41,7 +41,7 @@
     "src/**/*.ts", // Adicione seu diretório de origem
     "src/**/*.tsx" // Adicione seu diretório de origem
     ,
-    "src/tests/ProductCard.test.js"
+    "src/components/ProductCard/ProductCard.test.js"
   ],
   "exclude": [
     "node_modules"

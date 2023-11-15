@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import { useState } from "react";
 import { useQuery } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../components/ProductCard/ProductCard";
 import Header from "../components/Header";
 import styled from "styled-components";
 

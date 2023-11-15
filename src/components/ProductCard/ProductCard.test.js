@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import ProductCard from "@/components/ProductCard";
+import ProductCard from "@/components/ProductCard/ProductCard";
 
 const mockProduct = {
   id: 1,
