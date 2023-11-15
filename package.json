@@ -9,7 +9,7 @@
     ]
   },
   "scripts": {
-    "dev": "next dev && sb build ",
+    "dev": "next dev ",
     "build": "next build",
     "start": "next start",
     "test": "jest",

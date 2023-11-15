@@ -1,5 +1,7 @@
 {
   "$schema": "https://vercel.com/schema",
+  "buildCommand": "npm run build-storybook",
+  "devCommand": "npm run storybook",
   "version": 2,
   "builds": [
     { "src": "next.config.js", "use": "@vercel/next" },
