@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vercel.com/schema",
+  "version": 2,
+  "builds": [
+    { "src": "next.config.js", "use": "@vercel/next" },
+    { "src": "storybook-static/**/*", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    {
+      "src": "/storybook/(.*)",
+      "dest": "/storybook/$1",
+      "check": true
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1",
+      "check": true
+    }
+  ],
+  "env": {
+    "NEXT_PUBLIC_STORYBOOK_PATH": "/storybook"
+  },
+  "functions": {
+    "api/storybook": {
+      "runtime": "nodejs14.x",
+      "memory": 1024
+    }
+  }
+}
