@@ -1,6 +1,8 @@
 {
   "$schema": "https://vercel.com/schema",
   "version": 2,
+  "buildCommand": "npm run sb build",
+  "devCommand": "npm run storybook",
   "builds": [
     { "src": "next.config.js", "use": "@vercel/next" },
     { "src": "storybook-static/**/*", "use": "@vercel/static" }
@@ -21,7 +23,5 @@
   ],
   "env": {
     "NEXT_PUBLIC_STORYBOOK_PATH": "/storybook"
-  },
-  "buildCommand": "npm run build-storybook",
-  "devCommand": "npm run storybook"
+  }
 }
