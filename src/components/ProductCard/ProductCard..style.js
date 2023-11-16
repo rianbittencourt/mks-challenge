@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CardContainer = styled.div`
   position: relative;
-  background:white;
+  background: white;
   width: 250px;
   border: 1px solid #ccc;
   padding: 16px;
@@ -72,14 +72,17 @@ export const BuyButton = styled.button`
   padding: 1rem;
   border: none;
   font-weight: bold;
-  font-family: Montserrat;
+
   cursor: pointer;
   width: 100%;
   position: absolute;
   left: 0;
   bottom: 0;
   &:hover {
-    transition: 0.5s;
-    background-color: #073d6e; // Cor diferente quando o mouse está sobre o botão
+    transition: 0.2s;
+    background-color: transparent;
+    color: #0f52ba;
+    border-radius: 0px 0px 8px 8px;
+    border: 2px #0f52ba solid;
   }
 `;

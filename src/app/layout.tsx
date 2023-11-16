@@ -2,7 +2,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { QueryClientProvider, QueryClient } from "react-query";
-import Header from "@/components/Header";
+import Header from "@/components/Header/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 const queryClient = new QueryClient();
@@ -16,8 +16,9 @@ export default function RootLayout({
     <QueryClientProvider client={queryClient}>
       <html lang="pt-br">
         <body className={inter.className}>
-          <Header/>
-          {children}
+   
+        <Header/>
+         {children}
         </body>
       </html>
     </QueryClientProvider>
