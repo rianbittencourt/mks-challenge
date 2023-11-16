@@ -71,7 +71,7 @@ export const ProductDescription = styled.p`
 
 export const ButtonContainer = styled.div`
   margin-top: auto; 
-  align-items: flex-end;
+
 `;
 
 export const BuyButton = styled.button`
