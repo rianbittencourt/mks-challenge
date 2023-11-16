@@ -1,5 +1,5 @@
 import React from "react";
-import CardButton from "../CarrtButton/CartButton";
+import CardButton from "../CartButton/CartButton";
 import {
   HeaderContainer,
   HeaderBox,

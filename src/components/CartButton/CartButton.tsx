@@ -1,16 +1,14 @@
-import React, { useState } from "react";
 
+import React, { useState } from "react";
+import CartMenu from "../CartMenu/CartMenu";
 import {
   CartButtonContainer,
   CartButton,
   CountItems,
   CartIcon,
-  CartMenu,
-  MenuItem,
 } from "./CartButton.style";
 
-
-const CardButton = () => {
+const CardButton: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -23,10 +21,7 @@ const CardButton = () => {
         <CartIcon>🛒</CartIcon>
         <CountItems>0</CountItems>
       </CartButton>
-      <CartMenu isOpen={menuOpen}>
-        <MenuItem onClick={toggleMenu}>Item 1</MenuItem>
-        <MenuItem>Item 2</MenuItem>
-      </CartMenu>
+      <CartMenu isOpen={menuOpen} onClose={toggleMenu} />
     </CartButtonContainer>
   );
 };
