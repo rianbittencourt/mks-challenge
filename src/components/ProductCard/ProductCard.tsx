@@ -12,6 +12,8 @@ import {
   ProductPrice,
   CurrentPriceContainer,
   BuyButton,
+  ButtonContainer,
+  CardContentContainer
 } from "./ProductCard..style";
 
 interface Product {
@@ -41,6 +43,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   return (
     <CardContainer>
+      <CardContentContainer>
       {isLoading ? (
         <SkeletonContainer data-testid="skeleton-image" />
       ) : (
@@ -77,7 +80,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       ) : (
         <ProductDescription>{product!.description}</ProductDescription>
       )}
-      {!isLoading && <BuyButton>COMPRAR</BuyButton>}
+      </CardContentContainer>
+      
+      {!isLoading && <ButtonContainer><BuyButton>COMPRAR</BuyButton></ButtonContainer>}
+      
     </CardContainer>
   );
 };

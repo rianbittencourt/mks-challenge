@@ -8,7 +8,6 @@ export const HeaderContainer = styled.header`
 
 export const LogoContainer = styled.header`
   display: flex;
-
   align-items: center;
 `;
 

@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
-  position: relative;
+  display: flex;
+  flex-direction: column;
   background: white;
   width: 250px;
   border: 1px solid #ccc;
-  padding: 16px;
+
   margin: 16px;
   border-radius: 8px;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
@@ -15,14 +16,18 @@ export const CardContainer = styled.div`
 export const SkeletonContainer = styled.div`
   width: 100%;
   height: 200px;
-  background-color: #ddd; /* Cor de fundo para o esqueleto */
+  background-color: #ddd;
   border-radius: 4px;
 `;
 
 export const ProductImage = styled.img`
   width: 100%;
-  height: 200px;
+  height: 150px;
   object-fit: contain;
+`;
+
+export const CardContentContainer = styled.div`
+  padding: 10px;
 `;
 
 export const NameAndPriceContainer = styled.div`
@@ -37,7 +42,6 @@ export const ProductName = styled.h2`
   font-weight: lighter;
   font-size: 1.2rem;
   padding-right: 0.5rem;
-
   color: #2c2c2c;
 `;
 
@@ -61,28 +65,30 @@ export const ProductPrice = styled.p`
 
 export const ProductDescription = styled.p`
   padding-top: 10px;
-  padding-bottom: 40px;
   font-family: Montserrat;
   color: #555;
 `;
 
+export const ButtonContainer = styled.div`
+  margin-top: auto; 
+  align-items: flex-end;
+`;
+
 export const BuyButton = styled.button`
   background-color: #0f52ba;
+  width: 100%;
   color: #fff;
   padding: 1rem;
   border: none;
   font-weight: bold;
-
+  border: 2px #0f52ba solid;
+  border-radius: 0px 0px 8px 8px;
   cursor: pointer;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: 0;
+
   &:hover {
-    transition: 0.2s;
+    transition: 0.5s;
     background-color: transparent;
     color: #0f52ba;
-    border-radius: 0px 0px 8px 8px;
     border: 2px #0f52ba solid;
   }
 `;

@@ -34,12 +34,12 @@ const CartMenu = styled.aside`
   right: ${(props) =>
     props.isOpen
       ? "0"
-      : "-500px"}; /* Ajuste a largura do menu conforme necessário */
+      : "-101%"};
   height: 100%;
-  width: 25%; /* Ajuste a largura do menu conforme necessário */
+  width: 25%;
   background: #0f52ba;
   padding: 10px;
-  border-left: 10px solid gray;
+
   border-radius: 5px;
   transition: right 0.5s;
   z-index: 99;
@@ -69,7 +69,6 @@ const CardButton = () => {
       <CartMenu isOpen={menuOpen}>
         <MenuItem onClick={toggleMenu}>Item 1</MenuItem>
         <MenuItem>Item 2</MenuItem>
-
       </CartMenu>
     </CartButtonContainer>
   );
