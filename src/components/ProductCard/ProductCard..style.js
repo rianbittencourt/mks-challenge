@@ -5,8 +5,9 @@ export const CardContainer = styled.div`
   flex-direction: column;
   background: white;
   width: 250px;
-  border: 1px solid #ccc;
 
+
+  border: 1px solid #ccc;
   margin: 16px;
   border-radius: 8px;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
@@ -24,6 +25,7 @@ export const ProductImage = styled.img`
   width: 100%;
   height: 150px;
   object-fit: contain;
+
 `;
 
 export const CardContentContainer = styled.div`
@@ -31,16 +33,16 @@ export const CardContentContainer = styled.div`
 `;
 
 export const NameAndPriceContainer = styled.div`
-  margin-top: 20px;
+ 
   display: flex;
   justify-content: space-between;
 `;
 
 export const ProductName = styled.h2`
-  margin-top: 8px;
+ 
   font-family: Montserrat;
   font-weight: lighter;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding-right: 0.5rem;
   color: #2c2c2c;
 `;
@@ -53,20 +55,23 @@ export const CurrentPriceContainer = styled.div`
 
 export const ProductPrice = styled.p`
   font-weight: bold;
-  margin: 8px 0;
+ 
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
   background-color: #373737;
   border-radius: 0.5rem;
-  padding: 10px;
+  padding: 0.5rem;
   text-align: center;
   flex-shrink: 0;
 `;
 
 export const ProductDescription = styled.p`
-  padding-top: 10px;
-  font-family: Montserrat;
-  color: #555;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color:  #2C2C2C;
+  font-weight: 300;
+
+;
 `;
 
 export const ButtonContainer = styled.div`
@@ -78,7 +83,7 @@ export const BuyButton = styled.button`
   background-color: #0f52ba;
   width: 100%;
   color: #fff;
-  padding: 1rem;
+  padding: 0.5rem;
   border: none;
   font-weight: bold;
   border: 2px #0f52ba solid;
