@@ -9,6 +9,9 @@ export const HeaderContainer = styled.header`
 export const LogoContainer = styled.header`
   display: flex;
   align-items: center;
+  @media (max-width: 768px) {
+    display: inline;
+  }
 `;
 
 export const LogoPrincipalText = styled.div`
@@ -21,6 +24,10 @@ export const LogoSecondaryText = styled.div`
   font-weight: lighter;
   margin-top: 1rem;
   margin-left: 20px;
+  @media (max-width: 768px) {
+    margin-top: 0px;
+    margin-left: 0px;
+  }
 `;
 
 export const HeaderBox = styled.div`
@@ -29,9 +36,7 @@ export const HeaderBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
-
-export const CartIcon = styled.div`
-  font-size: 1.2rem;
-  cursor: pointer;
+  @media (max-width: 768px) {
+    justify-content: space-around;
+  }
 `;

@@ -39,10 +39,12 @@ export const CartMenu = styled.aside`
   width: 25%;
   background: #0f52ba;
   padding: 10px;
-
   border-radius: 5px;
   transition: right 0.5s;
   z-index: 99;
+  @media (max-width: 768px) {
+    width: 75%;
+  }
 `;
 
 export const MenuItem = styled.div`
@@ -51,4 +53,5 @@ export const MenuItem = styled.div`
   &:hover {
     background-color: #f0f0f0;
   }
+  
 `;
