@@ -1,5 +1,5 @@
 import React from "react";
-import CardButton from "../CartButton";
+import CardButton from "../CarrtButton/CartButton";
 import {
   HeaderContainer,
   HeaderBox,
@@ -8,7 +8,7 @@ import {
   LogoSecondaryText,
 } from "./Header.style";
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <HeaderContainer>
       <HeaderBox>

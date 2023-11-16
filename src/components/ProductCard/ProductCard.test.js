@@ -27,7 +27,6 @@ test("renderiza o esqueleto corretamente durante o carregamento", async () => {
 
   await waitFor(() => {
     expect(screen.getByTestId("skeleton-image")).toBeInTheDocument();
-    // Verifica se há pelo menos um elemento span com a classe react-loading-skeleton
     expect(
       document.querySelector("span.react-loading-skeleton")
     ).toBeInTheDocument();

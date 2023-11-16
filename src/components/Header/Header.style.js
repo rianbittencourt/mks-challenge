@@ -24,7 +24,7 @@ export const LogoSecondaryText = styled.div`
 `;
 
 export const HeaderBox = styled.div`
-  max-width: 80rem;
+  max-width: 100rem;
   margin: auto;
   display: flex;
   justify-content: space-between;
