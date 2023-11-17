@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 import React from "react";
 import {
@@ -12,10 +11,11 @@ import {
   StyledIconWrapper,
   StyledIcon,
   TextCartEmpty,
-  BoxEmptyCart
+  BoxEmptyCart,
+  BoxItemsCart,
 } from "./CartButton.style";
-
-
+import CartItem from "../ProductCardCart/ProductCardCart";
+import { useCartStore } from "@/store/cartStore";
 
 interface CartMenuProps {
   isOpen: boolean;
@@ -23,6 +23,8 @@ interface CartMenuProps {
 }
 
 const CartMenu: React.FC<CartMenuProps> = ({ isOpen, onClose }) => {
+  const { cart } = useCartStore();
+
   return (
     <StyledCartMenu isOpen={isOpen}>
       <PrincipalBox>
@@ -30,13 +32,20 @@ const CartMenu: React.FC<CartMenuProps> = ({ isOpen, onClose }) => {
         <CloseIcon onClick={onClose}>X</CloseIcon>
       </PrincipalBox>
       <ContainerMain>
-
-        <BoxEmptyCart>
-        <StyledIconWrapper>
-          <StyledIcon />
-        </StyledIconWrapper>
-        <TextCartEmpty>Seu carrinho está vazio</TextCartEmpty>
-        </BoxEmptyCart>
+        {cart.length === 0 ? (
+          <BoxEmptyCart>
+            <StyledIconWrapper>
+              <StyledIcon />
+            </StyledIconWrapper>
+            <TextCartEmpty>Seu carrinho está vazio</TextCartEmpty>
+          </BoxEmptyCart>
+        ) : (
+          <BoxItemsCart>
+            {cart.map((item) => (
+              <CartItem key={item.id} item={item} />
+            ))}
+          </BoxItemsCart>
+        )}
       </ContainerMain>
 
       <FinishBuy>Finalizar Compra</FinishBuy>

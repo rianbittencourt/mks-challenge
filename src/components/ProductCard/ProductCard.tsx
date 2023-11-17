@@ -41,8 +41,7 @@ const formatCurrency = (value: number) => {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const isLoading = !product;
-  const { addToCart } = useCartStore();
-
+  const { cart, addToCart } = useCartStore();
 
   return (
     <CardContainer>
@@ -94,7 +93,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           >
             COMPRAR
           </BuyButton>
-          
         </ButtonContainer>
       )}
     </CardContainer>

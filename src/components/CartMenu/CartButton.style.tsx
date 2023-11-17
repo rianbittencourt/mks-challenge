@@ -11,14 +11,14 @@ export const StyledCartMenu = styled.aside<StyledCartMenuProps>`
   top: 0;
   right: ${(props) => (props.isOpen ? "0" : "-101%")};
   height: 100%;
-  width: 25%;
+  width: 40rem;
   background: #0f52ba;
 
   border-radius: 5px;
   transition: right 0.5s;
   z-index: 99;
   @media (max-width: 768px) {
-    width: 90%;
+    width: 100%;
   }
 `;
 
@@ -42,11 +42,12 @@ export const CloseIcon = styled.div`
 
 export const ContainerMain = styled.div`
 
-  display: flex;
+ 
 
+ padding: 10px;
   justify-content: center; 
-  
-  padding: 20px;
+
+
 `;
 
 export const BoxEmptyCart = styled.div`
@@ -56,6 +57,16 @@ export const BoxEmptyCart = styled.div`
   align-items: center;
   align-self: center;
 `;
+
+export const BoxItemsCart = styled.div`
+  flex-direction: column;
+  display: flex;
+  margin-bottom: 10px;
+ 
+ 
+ 
+`;
+
 
 export const FinishBuy = styled.div`
   position: absolute;

@@ -5,6 +5,7 @@ interface Item {
   name: string;
   price: number | string;
   description: string;
+  photo: string;
   count?: number;
 }
 
@@ -45,10 +46,10 @@ export const useCartStore = create<CartStore>((set) => ({
       );
 
       if (!isItemInCart) {
-        const { id, name, price, description } = item;
+        const { id, name, price, description, photo } = item;
         const newCart = [
           ...state.cart,
-          { id, name, price, description, count: 1 },
+          { id, name, price, description, photo, count: 1 },
         ];
 
         localStorage.setItem("cart", JSON.stringify(newCart));
