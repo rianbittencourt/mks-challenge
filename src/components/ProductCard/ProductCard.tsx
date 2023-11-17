@@ -23,7 +23,7 @@ interface Product {
   brand: string;
   description: string;
   photo: string;
-  price: number;
+  price: number | string;
 }
 
 export interface ProductCardProps {

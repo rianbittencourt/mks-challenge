@@ -19,7 +19,7 @@ export interface Products {
   brand: string;
   description: string;
   photo: string;
-  price: number;
+  price: number | string;
 }
 
 async function getProducts(currentPage: number): Promise<Products[]> {

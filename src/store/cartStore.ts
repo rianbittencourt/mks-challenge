@@ -3,7 +3,7 @@ import create from "zustand";
 interface Item {
   id: number;
   name: string;
-  price: number;
+  price: number | string;
   description: string;
   count?: number;
 }
