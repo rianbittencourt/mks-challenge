@@ -7,6 +7,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   max-width: 80rem;
+  padding-top: 5rem;
   margin: auto;
   display: flex;
   flex-wrap: wrap;

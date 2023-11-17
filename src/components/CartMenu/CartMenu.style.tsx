@@ -13,7 +13,6 @@ export const StyledCartMenu = styled.aside<StyledCartMenuProps>`
   height: 100%;
   width: 40rem;
   background: #0f52ba;
-
   border-radius: 5px;
   transition: right 0.5s;
   z-index: 99;
@@ -26,7 +25,10 @@ export const PrincipalBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 3rem;
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 `;
 
 export const TitleCartMenu = styled.h1`
@@ -36,18 +38,16 @@ export const TitleCartMenu = styled.h1`
 
 export const CloseIcon = styled.div`
   border-radius: 100%;
-
   cursor: pointer;
 `;
 
 export const ContainerMain = styled.div`
+  padding: 0 3rem;
 
- 
-
- padding: 10px;
-  justify-content: center; 
-
-
+  justify-content: center;
+  @media (max-width: 768px) {
+    padding: 0 0.5rem;
+  }
 `;
 
 export const BoxEmptyCart = styled.div`
@@ -62,11 +62,7 @@ export const BoxItemsCart = styled.div`
   flex-direction: column;
   display: flex;
   margin-bottom: 10px;
- 
- 
- 
 `;
-
 
 export const FinishBuy = styled.div`
   position: absolute;
@@ -112,4 +108,3 @@ export const TextCartEmpty = styled.h2`
   font-size: 1.5rem;
   color: orange;
 `;
-

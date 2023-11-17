@@ -10,6 +10,6 @@ export const FooterContainer = styled.footer`
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 100%;
+
  
 `;

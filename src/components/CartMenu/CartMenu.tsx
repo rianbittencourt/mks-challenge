@@ -13,7 +13,7 @@ import {
   TextCartEmpty,
   BoxEmptyCart,
   BoxItemsCart,
-} from "./CartButton.style";
+} from "./CartMenu.style";
 import CartItem from "../ProductCardCart/ProductCardCart";
 import { useCartStore } from "@/store/cartStore";
 
