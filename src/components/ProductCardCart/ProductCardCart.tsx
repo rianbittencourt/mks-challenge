@@ -1,8 +1,28 @@
 import React from "react";
 import { useCartStore } from "@/store/cartStore";
 import styled from "styled-components";
+import { IoCloseCircleSharp } from "react-icons/io5";
 
+export const StyledIcon = styled(IoCloseCircleSharp)`
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  color: black;
+  font-size: 2rem;
+  cursor: pointer;
+  @media (max-width: 375px) {
+    font-size: 1.5rem;
+    right: -5px;
+    top: -5px;
+  }
+
+  &:hover {
+    color: red;
+    transition: 0.2s;
+  }
+`;
 const Container = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   background-color: white;
@@ -49,7 +69,6 @@ const IncrementButton = styled.button`
   border: none;
   border-left: 1px solid #ddd;
 
-
   padding: 5px 10px;
 
   cursor: pointer;
@@ -64,7 +83,6 @@ const DecrementButton = styled.button`
   border: none;
   border-right: 1px solid #ddd;
 
-  
   padding: 5px 10px;
 
   cursor: pointer;
@@ -120,6 +138,7 @@ const CartItem: React.FC<CartItemProps> = ({ item }) => {
 
   return (
     <Container>
+      <StyledIcon onClick={() => removeFromCart(item.id)}></StyledIcon>
       <ProductImage src={item!.photo} alt={item!.name} />
       <ItemName>{item.name}</ItemName>
 
