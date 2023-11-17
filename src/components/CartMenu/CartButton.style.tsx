@@ -1,4 +1,5 @@
-// CartMenu.tsx
+import { FaCartShopping } from "react-icons/fa6";
+
 import styled from "styled-components";
 
 interface StyledCartMenuProps {
@@ -17,7 +18,7 @@ export const StyledCartMenu = styled.aside<StyledCartMenuProps>`
   transition: right 0.5s;
   z-index: 99;
   @media (max-width: 768px) {
-    width: 75%;
+    width: 90%;
   }
 `;
 
@@ -39,6 +40,23 @@ export const CloseIcon = styled.div`
   cursor: pointer;
 `;
 
+export const ContainerMain = styled.div`
+
+  display: flex;
+
+  justify-content: center; 
+  
+  padding: 20px;
+`;
+
+export const BoxEmptyCart = styled.div`
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  align-self: center;
+`;
+
 export const FinishBuy = styled.div`
   position: absolute;
   bottom: 0;
@@ -48,13 +66,11 @@ export const FinishBuy = styled.div`
   font-weight: bold;
   font-size: 1.5rem;
   text-align: center;
-  cursor:pointer;
+  cursor: pointer;
   &:hover {
     transition: 0.2s;
-    background-color: white;
-    color:black;
-    
-  
+    background-color: orange;
+    color: black;
   }
 `;
 
@@ -65,3 +81,24 @@ export const MenuItem = styled.div`
     background-color: #f0f0f0;
   }
 `;
+
+export const StyledIconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 50%;
+`;
+
+export const StyledIcon = styled(FaCartShopping)`
+  color: orange;
+  font-size: 5rem;
+`;
+
+export const TextCartEmpty = styled.h2`
+  font-size: 1.5rem;
+  color: orange;
+`;
+

@@ -6,7 +6,10 @@ export const FooterContainer = styled.footer`
   text-align: center;
   font-weight: 300;
   padding: 1rem;
-  position: absolute;
   width: 100%;
+  position: fixed;
+  left: 0;
   bottom: 0;
+  width: 100%;
+ 
 `;

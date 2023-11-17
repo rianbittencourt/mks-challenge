@@ -13,8 +13,9 @@ import {
   CurrentPriceContainer,
   BuyButton,
   ButtonContainer,
-  CardContentContainer
+  CardContentContainer,
 } from "./ProductCard..style";
+import { useCartStore } from "@/store/cartStore";
 
 interface Product {
   id: number;
@@ -22,7 +23,7 @@ interface Product {
   brand: string;
   description: string;
   photo: string;
-  price: string;
+  price: number;
 }
 
 export interface ProductCardProps {
@@ -40,50 +41,62 @@ const formatCurrency = (value: number) => {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const isLoading = !product;
+  const { addToCart } = useCartStore();
+
 
   return (
     <CardContainer>
       <CardContentContainer>
-      {isLoading ? (
-        <SkeletonContainer data-testid="skeleton-image" />
-      ) : (
-        <ProductImage src={product!.photo} alt={product!.name} />
-      )}
-      <NameAndPriceContainer>
         {isLoading ? (
-          <Skeleton
-            count={2}
-            height={20}
-            width={100}
-            data-testid="skeleton-name"
-          />
+          <SkeletonContainer data-testid="skeleton-image" />
         ) : (
-          <ProductName>{product!.name}</ProductName>
+          <ProductImage src={product!.photo} alt={product!.name} />
         )}
-        <CurrentPriceContainer>
+        <NameAndPriceContainer>
           {isLoading ? (
             <Skeleton
-              count={1}
+              count={2}
               height={20}
               width={100}
-              data-testid="skeleton-price"
+              data-testid="skeleton-name"
             />
           ) : (
-            <ProductPrice>
-              {formatCurrency(Number(product!.price))}
-            </ProductPrice>
+            <ProductName>{product!.name}</ProductName>
           )}
-        </CurrentPriceContainer>
-      </NameAndPriceContainer>
-      {isLoading ? (
-        <Skeleton count={3} data-testid="skeleton-description" />
-      ) : (
-        <ProductDescription>{product!.description}</ProductDescription>
-      )}
+          <CurrentPriceContainer>
+            {isLoading ? (
+              <Skeleton
+                count={1}
+                height={20}
+                width={100}
+                data-testid="skeleton-price"
+              />
+            ) : (
+              <ProductPrice>
+                {formatCurrency(Number(product!.price))}
+              </ProductPrice>
+            )}
+          </CurrentPriceContainer>
+        </NameAndPriceContainer>
+        {isLoading ? (
+          <Skeleton count={3} data-testid="skeleton-description" />
+        ) : (
+          <ProductDescription>{product!.description}</ProductDescription>
+        )}
       </CardContentContainer>
-      
-      {!isLoading && <ButtonContainer><BuyButton>COMPRAR</BuyButton></ButtonContainer>}
-      
+
+      {!isLoading && (
+        <ButtonContainer>
+          <BuyButton
+            onClick={() => {
+              addToCart(product);
+            }}
+          >
+            COMPRAR
+          </BuyButton>
+          
+        </ButtonContainer>
+      )}
     </CardContainer>
   );
 };

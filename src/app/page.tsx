@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
 import ProductCard from "../components/ProductCard/ProductCard";
-import Header from "../components/Header/Header";
+import "./globals.css";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -19,7 +19,7 @@ export interface Products {
   brand: string;
   description: string;
   photo: string;
-  price: string;
+  price: number;
 }
 
 async function getProducts(currentPage: number): Promise<Products[]> {

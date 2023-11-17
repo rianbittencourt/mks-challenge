@@ -1,4 +1,5 @@
-// CartMenu.tsx
+
+import styled from "styled-components";
 import React from "react";
 import {
   StyledCartMenu,
@@ -7,7 +8,14 @@ import {
   CloseIcon,
   PrincipalBox,
   FinishBuy,
+  ContainerMain,
+  StyledIconWrapper,
+  StyledIcon,
+  TextCartEmpty,
+  BoxEmptyCart
 } from "./CartButton.style";
+
+
 
 interface CartMenuProps {
   isOpen: boolean;
@@ -21,8 +29,17 @@ const CartMenu: React.FC<CartMenuProps> = ({ isOpen, onClose }) => {
         <TitleCartMenu>Carrinho</TitleCartMenu>
         <CloseIcon onClick={onClose}>X</CloseIcon>
       </PrincipalBox>
+      <ContainerMain>
 
-     <FinishBuy>Finalizar Compra</FinishBuy>
+        <BoxEmptyCart>
+        <StyledIconWrapper>
+          <StyledIcon />
+        </StyledIconWrapper>
+        <TextCartEmpty>Seu carrinho está vazio</TextCartEmpty>
+        </BoxEmptyCart>
+      </ContainerMain>
+
+      <FinishBuy>Finalizar Compra</FinishBuy>
     </StyledCartMenu>
   );
 };

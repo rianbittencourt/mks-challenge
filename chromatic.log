@@ -8,16 +8,16 @@ Authenticated with Chromatic
     → Using project token '****************eab3'
 Retrieving git information
 Retrieved git information
-    → Commit 'b0bc623' on branch 'master'; found 1 parent build
+    → Commit '954f109' on branch 'master'; found 1 parent build
 Collecting Storybook metadata
 Collected Storybook metadata
     → Storybook 7.5.3 for React; using the @storybook/nextjs builder (7.5.3); supported addons found: Links, Essentials, Interactions
 Initializing build
 Initialized build
-    → Build 2 initialized
+    → Build 3 initialized
 Building your Storybook
-    → Running command: npm run build-storybook -- --output-dir C:\Users\Rian\AppData\Local\Temp\chromatic--6572-fAZQDZBRz8nk
-Storybook built in 1 minute 10 seconds
+    → Running command: npm run build-storybook -- --output-dir C:\Users\Rian\AppData\Local\Temp\chromatic--17028-ETWP2wULzpoT
+Storybook built in 1 minute 21 seconds
     → View build log at C:\Users\Rian\Desktop\Desenvolvimento\mks-challenge\build-storybook.log
 Publish your built Storybook
     → Validating Storybook files
@@ -29,46 +29,49 @@ Publishing your built Storybook
     → [====                ] 18%
     → [====                ] 20%
     → [=====               ] 25%
-    → [=======             ] 37%
+    → [========            ] 40%
     → [==========          ] 48%
+    → [==========          ] 49%
     → [==========          ] 50%
     → [==========          ] 51%
+    → [==========          ] 52%
     → [===========         ] 53%
     → [===========         ] 54%
     → [===========         ] 57%
     → [============        ] 58%
-    → [============        ] 60%
     → [============        ] 61%
     → [============        ] 62%
     → [=============       ] 64%
-    → [==============      ] 68%
+    → [=============       ] 66%
     → [==============      ] 70%
+    → [==============      ] 71%
     → [==============      ] 72%
-    → [===============     ] 74%
+    → [===============     ] 75%
     → [===============     ] 76%
     → [================    ] 78%
-    → [================    ] 82%
+    → [================    ] 80%
     → [=================   ] 83%
-    → [==================  ] 90%
+    → [==================  ] 89%
     → [=================== ] 93%
     → [=================== ] 94%
     → [=================== ] 97%
     → [====================] 100%
 Publish complete in 8 seconds
-    → View your Storybook at https://65549f9286c2c263efad59d5-xjyvgpxrus.chromatic.com
+    → View your Storybook at https://65549f9286c2c263efad59d5-xfzjqbpvga.chromatic.com
 Verifying your Storybook
     → This may take a few minutes
-Started build 2
-    → View build details at https://www.chromatic.com/build?appId=65549f9286c2c263efad59d5&number=2
-Running 2 tests
+Started build 3
+    → View build details at https://www.chromatic.com/build?appId=65549f9286c2c263efad59d5&number=3
+Running 3 tests
     → This may take a few minutes
 i Speed up Continuous Integration
 Your project is linked to GitHub so Chromatic will report results there.
 This means you can pass the --exit-once-uploaded flag to skip waiting for build results.
 Read more here: https://www.chromatic.com/docs/cli#chromatic-options
-    → [==========          ] 1/2  ProductCard › Default 
-    → [====================] 2/2  ProductCard › Loading 
-× Found 2 visual changes: Review the changes at https://www.chromatic.com/build?appId=65549f9286c2c263efad59d5&number=2
+    → [=======             ] 1/3  Header › Header Default 
+    → [=============       ] 2/3  ProductCard › Default 
+    → [====================] 3/3  ProductCard › Loading 
+× Found 3 visual changes: Review the changes at https://www.chromatic.com/build?appId=65549f9286c2c263efad59d5&number=3
 
 i For CI/CD use cases, this command failed with exit code 1
 Pass --exit-zero-on-changes to succeed this command regardless of changes.
