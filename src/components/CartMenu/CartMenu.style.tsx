@@ -16,6 +16,7 @@ export const StyledCartMenu = styled.aside<StyledCartMenuProps>`
   border-radius: 5px;
   transition: right 0.5s;
   z-index: 99;
+  box-shadow: -10px 0 15px rgba(0, 0, 0, 0.1); 
   @media (max-width: 768px) {
     width: 100%;
   }
