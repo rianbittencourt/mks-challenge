@@ -10,22 +10,33 @@ interface Item {
 
 interface CartStore {
   cart: Item[];
+  addedSuccessfully?: boolean;
+  message?: string;
   addToCart: (item: Item) => void;
   removeFromCart: (id: number) => void;
   increaseCount: (id: number) => void;
   decreaseCount: (id: number) => void;
 }
 
-const initialCartState: CartStore = {
-  cart: JSON.parse(localStorage.getItem("cart") || "[]"),
-  addToCart: (item) => {},
-  removeFromCart: (id) => {},
-  increaseCount: (id) => {},
-  decreaseCount: (id) => {},
-};
+const getInitialCartState = (): CartStore => {
+  const isBrowser = typeof window !== "undefined";
 
+  const cartFromLocalStorage = isBrowser ? localStorage.getItem("cart") : null;
+
+  const initialCart = cartFromLocalStorage
+    ? JSON.parse(cartFromLocalStorage)
+    : [];
+
+  return {
+    cart: initialCart,
+    addToCart: () => {},
+    removeFromCart: () => {},
+    increaseCount: () => {},
+    decreaseCount: () => {},
+  };
+};
 export const useCartStore = create<CartStore>((set) => ({
-  ...initialCartState,
+  ...getInitialCartState(),
 
   addToCart: (item) =>
     set((state) => {
@@ -78,7 +89,7 @@ export const useCartStore = create<CartStore>((set) => ({
             ? { ...item, count: item.count - 1 }
             : item
         )
-        .filter((item) => item.count !== 0); 
+        .filter((item) => item.count !== 0);
 
       localStorage.setItem("cart", JSON.stringify(newCart));
       return { cart: newCart };
