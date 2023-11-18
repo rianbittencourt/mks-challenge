@@ -14,7 +14,7 @@ export const StyledCartMenu = styled.aside<StyledCartMenuProps>`
   top: 0;
   right: ${(props) => (props.isOpen ? "0" : "-101%")};
   height: 100%;
-  width: 35rem;
+  width: 38rem;
   background: #0f52ba;
   border-radius: 5px;
   transition: right 0.5s;
