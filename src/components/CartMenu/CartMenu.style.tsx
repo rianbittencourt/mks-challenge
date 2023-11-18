@@ -7,6 +7,9 @@ interface StyledCartMenuProps {
 }
 
 export const StyledCartMenu = styled.aside<StyledCartMenuProps>`
+  display: flex;
+  
+  flex-direction: column;
   position: fixed;
   top: 0;
   right: ${(props) => (props.isOpen ? "0" : "-101%")};
@@ -16,7 +19,7 @@ export const StyledCartMenu = styled.aside<StyledCartMenuProps>`
   border-radius: 5px;
   transition: right 0.5s;
   z-index: 99;
-  box-shadow: -10px 0 15px rgba(0, 0, 0, 0.1); 
+  box-shadow: -10px 0 15px rgba(0, 0, 0, 0.1);
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -66,8 +69,6 @@ export const BoxItemsCart = styled.div`
 `;
 
 export const FinishBuy = styled.div`
-  position: absolute;
-  bottom: 0;
   background-color: black;
   width: 100%;
   padding: 20px;

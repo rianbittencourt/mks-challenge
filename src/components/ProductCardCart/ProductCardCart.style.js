@@ -6,6 +6,8 @@ export const StyledIcon = styled(IoCloseCircleSharp)`
   right: -10px;
   top: -10px;
   color: black;
+
+  
   font-size: 2rem;
   cursor: pointer;
   @media (max-width: 375px) {
