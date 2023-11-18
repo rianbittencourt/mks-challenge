@@ -40,8 +40,8 @@ export const NameAndPriceContainer = styled.div`
 
 export const ProductName = styled.h2`
  
-  font-family: Montserrat;
-  font-weight: lighter;
+
+  font-weight: 300;
   font-size: 1.1rem;
   padding-right: 0.5rem;
   color: #2c2c2c;
