@@ -8,13 +8,13 @@ interface StyledCartMenuProps {
 
 export const StyledCartMenu = styled.aside<StyledCartMenuProps>`
   display: flex;
-  
+
   flex-direction: column;
   position: fixed;
   top: 0;
   right: ${(props) => (props.isOpen ? "0" : "-101%")};
   height: 100%;
-  width: 40rem;
+  width: 35rem;
   background: #0f52ba;
   border-radius: 5px;
   transition: right 0.5s;
