@@ -83,14 +83,6 @@ export const FinishBuy = styled.div`
   }
 `;
 
-export const MenuItem = styled.div`
-  padding: 5px;
-  cursor: pointer;
-  &:hover {
-    background-color: #f0f0f0;
-  }
-`;
-
 export const StyledIconWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -109,4 +101,18 @@ export const StyledIcon = styled(FaCartShopping)`
 export const TextCartEmpty = styled.h2`
   font-size: 1.5rem;
   color: orange;
+`;
+
+export const TotalCount = styled.div`
+  margin-top: auto;
+  padding: 0px 40px;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: white;
+  font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 768px) {
+    padding: 0 10px;
+  }
 `;

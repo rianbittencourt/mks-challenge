@@ -2,7 +2,7 @@ import styled from "styled-components";
 import React from "react";
 import {
   StyledCartMenu,
-  MenuItem,
+  TotalCount,
   TitleCartMenu,
   CloseIcon,
   PrincipalBox,
@@ -17,19 +17,7 @@ import {
 import CartItem from "../ProductCardCart/ProductCardCart";
 import { useCartStore } from "@/store/cartStore";
 
-export const TotalCount = styled.div`
-  margin-top: auto;
-  padding: 0px 40px;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  color: white;
-  font-weight: 800;
-  display: flex;
-  justify-content: space-between;
-  @media (max-width: 768px) {
-    padding: 0 10px;
-  }
-`;
+
 
 interface CartMenuProps {
   isOpen: boolean;
