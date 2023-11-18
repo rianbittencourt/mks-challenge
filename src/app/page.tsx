@@ -66,13 +66,13 @@ const Home = () => {
   }
 
   return (
-    <>
+
       <Container>
         {data.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </Container>
-    </>
+
   );
 };
 

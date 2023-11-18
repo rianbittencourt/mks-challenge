@@ -1,13 +1,14 @@
 import React from "react";
 
 import {
- FooterContainer
+ FooterContainer,
+ FooterText,
 } from "./Footer.style";
 
 const Footer: React.FC = () => {
   return (
     <FooterContainer>
-     MKS Sistemas © Todos os direitos reservados
+    <FooterText> MKS Sistemas © Todos os direitos reservados</FooterText>
     </FooterContainer>
   );
 };

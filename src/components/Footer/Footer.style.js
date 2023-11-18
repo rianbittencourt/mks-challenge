@@ -2,14 +2,19 @@ import styled from "styled-components";
 
 export const FooterContainer = styled.footer`
   background: #eeeeee;
-  color: black;
-  text-align: center;
-  font-weight: 300;
+  position: relative;
   padding: 1rem;
-  width: 100%;
-  position: fixed;
-  left: 0;
-  bottom: 0;
+
+`;
+
+export const FooterText = styled.p`
+ font-size: 1rem;
+ color: black;
+ text-align: center;
+ font-weight: 300;
+
+
+ 
 
  
 `;
