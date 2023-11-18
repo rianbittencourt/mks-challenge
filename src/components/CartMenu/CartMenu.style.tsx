@@ -1,9 +1,8 @@
 import { FaCartShopping } from "react-icons/fa6";
-
 import styled from "styled-components";
 
 interface StyledCartMenuProps {
-  isOpen: boolean;
+  menuIsOpen: boolean;
 }
 
 export const StyledCartMenu = styled.aside<StyledCartMenuProps>`
@@ -12,7 +11,7 @@ export const StyledCartMenu = styled.aside<StyledCartMenuProps>`
   flex-direction: column;
   position: fixed;
   top: 0;
-  right: ${(props) => (props.isOpen ? "0" : "-101%")};
+  right: ${(props) => (props.menuIsOpen ? "0" : "-101%")};
   height: 100%;
   width: 38rem;
   background: #0f52ba;

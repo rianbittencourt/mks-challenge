@@ -1,4 +1,4 @@
-import styled from "styled-components";
+
 import React from "react";
 import {
   StyledCartMenu,
@@ -17,14 +17,12 @@ import {
 import CartItem from "../ProductCardCart/ProductCardCart";
 import { useCartStore } from "@/store/cartStore";
 
-
-
 interface CartMenuProps {
-  isOpen: boolean;
+  menuIsOpen: boolean;
   onClose: () => void;
 }
 
-const CartMenu: React.FC<CartMenuProps> = ({ isOpen, onClose }) => {
+const CartMenu: React.FC<CartMenuProps> = ({ menuIsOpen, onClose }) => {
   const { cart } = useCartStore();
 
   const calculateTotal = (): number => {
@@ -46,9 +44,8 @@ const CartMenu: React.FC<CartMenuProps> = ({ isOpen, onClose }) => {
     });
   };
 
-
   return (
-    <StyledCartMenu isOpen={isOpen}>
+    <StyledCartMenu menuIsOpen={menuIsOpen}>
       <PrincipalBox>
         <TitleCartMenu>Carrinho</TitleCartMenu>
         <CloseIcon onClick={onClose}>X</CloseIcon>
@@ -71,7 +68,7 @@ const CartMenu: React.FC<CartMenuProps> = ({ isOpen, onClose }) => {
       </ContainerMain>
 
       <TotalCount>
-      <p>Total:</p> <p>{formatCurrency(calculateTotal())}</p>
+        <p>Total:</p> <p>{formatCurrency(calculateTotal())}</p>
       </TotalCount>
       <FinishBuy>Finalizar Compra</FinishBuy>
     </StyledCartMenu>

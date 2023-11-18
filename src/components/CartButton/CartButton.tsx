@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import { useCartStore } from "@/store/cartStore"; // Certifique-se de importar corretamente o hook
-
-import CartMenu from "../CartMenu/CartMenu";
+import React from "react";
+import { useCartStore } from "@/store/cartStore";
 import {
   CartButtonContainer,
   CartButton,
@@ -9,21 +7,22 @@ import {
   CartIcon,
 } from "./CartButton.style";
 
-const CardButton: React.FC = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const cart = useCartStore((state) => state.cart); // Acesse o estado do carrinho
+interface CardButtonProps {
+  menuIsOpen: boolean;
+  toggleMenu: () => void;
+}
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+const CardButton: React.FC<CardButtonProps> = ({ toggleMenu }) => {
+  const { cart } = useCartStore();
 
   return (
     <CartButtonContainer>
       <CartButton onClick={toggleMenu}>
         <CartIcon>🛒</CartIcon>
-        <CountItems>{cart.length}</CountItems>
+        <CountItems data-testid="count-items">
+          {cart ? cart.length : 0}
+        </CountItems>
       </CartButton>
-      <CartMenu isOpen={menuOpen} onClose={toggleMenu} />
     </CartButtonContainer>
   );
 };
